@@ -1,0 +1,15 @@
+CREATE TABLE Loans
+(
+ID INT NOT NULL AUTO_INCREMENT,
+empID SMALLINT,
+equipID SMALLINT,
+checkOutDT DATETIME,
+CONSTRAINT LoansPK 
+    PRIMARY KEY (ID),
+CONSTRAINT LoansEmployeeFK 
+    FOREIGN KEY (empID) 
+    REFERENCES employee(ID),
+CONSTRAINT LoansEquipmentFK 
+    FOREIGN KEY (equipID) 
+    REFERENCES equipment(ID)
+)

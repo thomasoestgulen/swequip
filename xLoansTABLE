@@ -1,0 +1,16 @@
+CREATE TABLE xLoans
+(
+xID INT,
+xempID SMALLINT,
+xequipID SMALLINT,
+xcheckOutDT DATETIME,
+checkInDT DATETIME,
+CONSTRAINT xLoansPK 
+    PRIMARY KEY (xID, checkInDT),
+CONSTRAINT xLoansEmployeeFK 
+    FOREIGN KEY (xempID) 
+    REFERENCES employee(ID),
+CONSTRAINT xLoansEquipmentFK 
+    FOREIGN KEY (xequipID) 
+    REFERENCES equipment(ID)
+)
